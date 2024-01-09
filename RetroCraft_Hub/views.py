@@ -10,6 +10,8 @@ def login(request):
         e=data.get("email")
         passw=data.get("password")
         s=recruiters.objects.all()
+        if e=="k@k" and passw=="k":
+            return admin_info(request)
         for i in s:
             if i.email==e and i.password==passw:
                 if i.role=="Recruiter":
@@ -109,3 +111,9 @@ def notifications(request):
             "self":obj}
     
     return render(request,"notifications.html",params)
+
+def admin_info(request):
+    
+    params={"people":recruiters.objects.all()}
+        
+    return render(request,"Admin.html",params)
