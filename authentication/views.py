@@ -36,8 +36,9 @@ def signin(request):
             if profile:
                 s.profile_pic=profile  
             else:
-                s.profile_pic="Profile_pics/user.png"
+                s.profile_pic="user.png"
             s.save()
+        
             
         return redirect('/')
         

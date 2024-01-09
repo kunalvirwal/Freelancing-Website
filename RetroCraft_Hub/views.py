@@ -9,9 +9,12 @@ def login(request):
         data=request.POST
         e=data.get("email")
         passw=data.get("password")
-        s=recruiters.objects.all()
+        
+        
         if e=="k@k" and passw=="k":
             return admin_info(request)
+        
+        s=recruiters.objects.all()
         for i in s:
             if i.email==e and i.password==passw:
                 if i.role=="Recruiter":
@@ -113,40 +116,6 @@ def notifications(request):
     return render(request,"notifications.html",params)
 
 def admin_info(request):
-    if request.method=="POST":
-        
-        data=request.POST
-        n=data.get("name").strip()
-        e=data.get("email").strip()
-        phn=data.get("phn").strip()
-        prof=data.get("profession").strip()
-        o=data.get("org").strip()
-        add=data.get("address").strip()
-        passw=data.get("password").strip()
-        r=data.get("role")
-        ab=data.get("about").strip()
-        profile=request.FILES.get("profile_pic")
-        
-            
-        if not(n=='' or e=='' or phn=='' or len(phn)!=10 or add=='' or passw==''):
-            s=recruiters.objects.create(name=n,
-                                    email=e,
-                                    phone=phn,
-                                    profession=prof,
-                                    org=o,
-                                    role=r,
-                                    profile_pic='',
-                                    address=add,
-                                    password=passw,
-                                    about=ab) 
-            if profile:
-                s.profile_pic=profile  
-            else:
-                s.profile_pic="Profile_pics/user.png"
-            s.save()
-            params={"people":recruiters.objects.all()}
-            return render(request,"Admin.html",params)
     
     params={"people":recruiters.objects.all()}
-        
     return render(request,"Admin.html",params)
