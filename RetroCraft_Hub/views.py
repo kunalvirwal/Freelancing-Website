@@ -11,8 +11,7 @@ def login(request):
         passw=data.get("password")
         
         
-        if e=="k@k" and passw=="k":
-            return admin_info(request)
+
         
         s=recruiters.objects.all()
         for i in s:
@@ -87,22 +86,20 @@ def notifications(request):
             k=i.jobname.split("$#$?")
             job_name=k[0]            # name of the interested job
             a.insert(0,[{"doer":i.doer,"action":i.action,"jobname":job_name},"You"])   ## takes only selected valuees and also reverses the list  [notification,doer reference]
-            # if obj.role =="Freelancer":
-            #     a.insert(0,[{"doer":i.doer,"action":i.action,"jobname":job_name},"You"])   ## takes only selected valuees and also reverses the list  [notification,doer reference]
-            # elif obj.role =="Recruiter":
-            #     a.insert(0,[{"doer":i.doer,"action":i.action,"jobname":job_name},"You"])   ## takes only selected valuees and also reverses the list  [notification,doer reference]
+
         elif i.action=="showed interest":
             k=i.jobname.split("$#$?")
             job_name=k[0]            # name of the interested job
             print(k,"\n", job_name)
             em=k[1]         #  email of the freelancer who was interested
             job_id=k[2]     # the job id to select only those jobs which belong to the current user
-            job=jobs.objects.get(id=job_id)
+            print(k)
+   
             free=recruiters.objects.get(email=em)
-            if job.rec == user_email: 
-                a.insert(0,[{"doer":i.doer,"action":i.action,"jobname":job_name},free.name])
+            
+            a.insert(0,[{"doer":i.doer,"action":i.action,"jobname":job_name},free.name])
                 
-                
+            
                 
                 
         # if obj.following!='':## if current user is a follower of the doer
@@ -115,7 +112,3 @@ def notifications(request):
     
     return render(request,"notifications.html",params)
 
-def admin_info(request):
-    
-    params={"people":recruiters.objects.all()}
-    return render(request,"Admin.html",params)

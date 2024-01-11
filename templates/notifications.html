@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bracket (by-Kunal)</title>
     <style>
         .scrollbar {
         
@@ -55,22 +55,22 @@
                 {% if self.role == 'Freelancer' %}
                 <nav aria-label="breadcrumb" class=" rounded-3 p-3 mb-1">
                   <ol class="breadcrumb mb-0">
-                    <li class="breadcrumb-item"><a href="/home/" class="text-decoration-none">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/joblist/" class="text-decoration-none">Jobs</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Notifications</li>
-                    <li class="breadcrumb-item" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/" class="text-decoration-none" style="color:red;">Logout -&gt;]</a></li>
+                    <li class=""><a href="/home/" class="text-decoration-none">Home</a></li>&emsp;
+                    <li class=""><a href="/joblist/" class="text-decoration-none">Jobs</a></li>&emsp;
+                    <li class=" active" aria-current="page">Notifications</li>&emsp;
+                    <li class="" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/" class="text-decoration-none" style="color:red;">Logout -&gt;]</a></li>
   
                   </ol>
                 </nav>
                 {% elif self.role == "Recruiter" %}
                 <nav aria-label="breadcrumb" class=" rounded-3 p-3 mb-1">
                     <ol class="breadcrumb mb-0">
-                      <li class="breadcrumb-item"><a href="/home/" class="text-decoration-none">Home</a></li>
-                      <li class="breadcrumb-item active" aria-current="page">Notifications</li>
-                      <li class="breadcrumb-item"><a href="/freelancerlist/" class="text-decoration-none">Freelancers</a></li>
-                      <li class="breadcrumb-item"><a href="/newjob/" class="text-decoration-none">New Job</a></li>
-                      <li class="breadcrumb-item"><a href="/editprofile/" class="text-decoration-none">Edit Profile</a></li>
-                      <li class="breadcrumb-item" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/" class="text-decoration-none" style="color:red;">Logout -&gt;]</a></li>
+                      <li class=""><a href="/home/" class="text-decoration-none">Home</a></li>&emsp;
+                      <li class=" active" aria-current="page">Notifications</li>&emsp;
+                      <li class=""><a href="/freelancerlist/" class="text-decoration-none">Freelancers</a></li>&emsp;
+                      <li class=""><a href="/newjob/" class="text-decoration-none">New Job</a></li>&emsp;
+                      <li class=""><a href="/editprofile/" class="text-decoration-none">Edit Profile</a></li>&emsp;
+                      <li class="" >&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<a href="/" class="text-decoration-none" style="color:red;">Logout -&gt;]</a></li>
     
                     </ol>
                   </nav>
@@ -81,7 +81,7 @@
           
                 {% if self.role == "Freelancer" %}
                     
-                {%for i in notify %}
+                {% for i in notify %}
               
                 <div class="col-lg-12">     
                     {% if i.0.action == "showed interest" %} 
@@ -91,25 +91,25 @@
                             <div class="mb-2 fs-3" style="  ">  
                                 &gt;&gt;&gt; {{i.1}} showed interest to a job "{{i.0.jobname}}"
                                 
-                                {% comment %} {% if i.0.action == "removed the job" %}
-                                    {{i.1}} deleted a job "{{i.0.jobname}}"   ############################ comeback
-                                {% endif %} {% endcomment %}
-
-
-                            {% comment %} <a href="/home/{{i.1.id}}" class=" pt-2" style=" text-decoration: none; color:black;">
-                                <span class=" card-header shadow border-2 rounded-3 py-2 pb-3" style="background: #eeeeee8d; text-align:center; position: relative; right:20px;">
-                            
-                                <img src="/media/{{i.1.profile_pic}}" alt="avatar"
-                                class="rounded-circle img-fluid border border-secondary shadow bg-white rounded " style="width: 40px; height:40px; object-fit:contain;">
-                                {{i.1.name}} 
-                                </span>
-                            </a> {% endcomment %}
                             </div>
                         </div>
                     </div>
                     {% endif %}
+
+                    {% if i.0.action == "left the job" %} 
+                    <div class="card mb-2 shadow mb-2  rounded" style="background-color:rgba(248, 38, 38, 0.94); color:white;" >
+                        
+                        <div class="card-body pt-0 pb-0 "  >
+                            <div class="mb-2 fs-3" style="  ">  
+                                &gt;&gt;&gt; {{i.1}} left the job "{{i.0.jobname}}"
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    {% endif %}
                 </div>
-                {%endfor%}
+                {% endfor %}
 
                 {% elif self.role == "Recruiter" %}
                     

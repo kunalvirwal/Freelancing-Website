@@ -32,6 +32,7 @@ urlpatterns = [
     path("home/",views.home,name="home"),
     path("home/<id>",views.homeview,name="homeview"),
     path("notifications/",views.notifications,name="notifications"),
+
     
     ### All Recruiter's functionalities
     path("newjob/",views2.newjob,name="new_job"),

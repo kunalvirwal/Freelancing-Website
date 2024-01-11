@@ -91,7 +91,7 @@ def addinterest(request,id):
     
     # notification
     obj=recruiters.objects.get(email=user_email)
-    t=(job.name,user_email,str(job.id))
+    t=(job.name,user_email,str(job.id))    # name of the job, email of the doer freelancer, job id
     notification.objects.create(doer=obj.id,action="showed interest",jobname="$#$?".join(t))
     return redirect("/home/")
 
@@ -103,4 +103,6 @@ def leavejob(request,id):
     s=",".join(a)
     job.applied_emails=s
     job.save()
+    guy=recruiters.objects.get(email=user_email)
+    notification.objects.create(doer=guy.id,action="left the job",jobname=job.name)##########################################
     return redirect("/home/")
