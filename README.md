@@ -14,9 +14,8 @@ How to run on localhost:
 3) Find the first 3 commented lines which start with "###" and uncomment them, instead comment the 3 lines which are just over each one of them and save it. (Just like in the video at 1:45sec)
    This way we changed the project settings from production to localhost.
    
-4) Create a virtual environment inside master repository using
+4) Create a virtual environment inside master repository and run it using
    >>> python -m venv env
-   And run the virtual environment using
    >>> .\env\Scripts\activate
    
 5) Install all the modules in requirements.txt using
@@ -27,4 +26,5 @@ How to run on localhost:
    And visit (http://127.0.0.1:8000/)
 
 Again Thanks to everyone at IMG
+
 Made with ❤︎ by Kunal
