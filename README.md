@@ -4,7 +4,7 @@ Whereas freelancers can lookout for job opportunities and explore trusted recrui
 
 Even though, RetroCraftHub was supposed to be a team project, still I have made it on my own as a solo project.
 In the process I learned how to make Django based websites from Newton School Coding for all.
-This project is already deployed at https://kunal-retrocrafthub.onrender.com 
+This project is already deployed at https://kunal-retrocrafthub.onrender.com (can take a couple of minutes to load)
 
 How to run on localhost:
 1) Clone the repository and cd to the Freelancing-Website repository (master repo).
