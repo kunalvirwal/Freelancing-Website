@@ -32,5 +32,6 @@ Here's how it would look like...
 ![Job List Page](./README_Assets/joblist.png)  
 
 and many more...
-
-<p style="text-align:center;">Made with ❤️ by Kunal</p>
+<p align=center>
+Made with ❤️ by Kunal
+</p>
