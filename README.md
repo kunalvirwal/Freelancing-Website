@@ -1,30 +1,36 @@
+# RetroCraft-Hub
+***
 This repository holds a Django based web application which is a Freelancing website i.e. RetroCraftHub and is a submission for IMG winter assignment.
 Here recruiters can offer jobs and find young and experienced freelancers,
 Whereas freelancers can lookout for job opportunities and explore trusted recruiters.
 
-Even though, RetroCraftHub was supposed to be a team project, still I have made it on my own as a solo project.
-In the process I learned how to make Django based websites from Newton School Coding for all.
-This project is already deployed at https://kunal-retrocrafthub.onrender.com (can take a couple of minutes to load)
+RetroCraftHub was my first Web App I have made it on my own as a solo project.
+In the process I learned how to make Django based websites and APIs.
+This project is already deployed at https://kunal-retrocrafthub.onrender.com (can take a couple of minutes to load).
 
-How to run on localhost:
+## How to run on localhost:
 1) Clone the repository and cd to the Freelancing-Website repository (master repo).
    
-2) Go into settings.py inside RetroCraft_Hub (main project repo)
+2) Copy the contents of `sample.env` to `.env` and add `SECRET_KEY` in .env
    
-3) Find the first 3 commented lines which start with "###" and uncomment them, instead comment the 3 lines which are just over each one of them and save it. (Just like in the video at 1:45sec)
-   This way we changed the project settings from production to localhost.
+3) Create a virtual environment inside master repository and run it using
+```
+python -m venv env
+.\env\Scripts\activate
+```   
+4) Install all the modules in requirements.txt using
+`pip install -r requirements. txt`
    
-4) Create a virtual environment inside master repository and run it using
-   >>> python -m venv env
-   >>> .\env\Scripts\activate
-   
-5) Install all the modules in requirements.txt using
-   >>> pip install -r requirements. txt
-   
-6) Finally
-   >>> python manage.py runserver
+5) Finally
+`python manage.py runserver`
    And visit (http://127.0.0.1:8000/)
 
-Again Thanks to everyone at IMG
+Here's how it would look like...
 
-Made with ❤︎ by Kunal
+![Login Page](./README_Assets/Login.png)  
+![Recruiter's Home Page](./README_Assets/Recruiter.png)    
+![Job List Page](./README_Assets/joblist.png)  
+
+and many more...
+
+<p style="text-align:center;">Made with ❤️ by Kunal</p>
