@@ -1,6 +1,6 @@
 # RetroCraft-Hub
 ***
-This repository holds a Django based web application which is a Freelancing website i.e. RetroCraftHub and is a submission for IMG winter assignment.
+This repository holds a Django based web application which is a Freelancing website i.e. RetroCraftHub.
 Here recruiters can offer jobs and find young and experienced freelancers,
 Whereas freelancers can lookout for job opportunities and explore trusted recruiters.
 
