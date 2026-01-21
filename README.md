@@ -19,8 +19,9 @@ python -m venv env
 .\env\Scripts\activate
 ```   
 4) Install all the modules in requirements.txt using
-`pip install -r requirements. txt`
-   
+```
+pip install -r requirements. txt
+```
 5) Finally
 `python manage.py runserver`
    And visit (http://127.0.0.1:8000/)
